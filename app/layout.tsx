@@ -1,7 +1,7 @@
-import Footer from './Footer'
+import Footer from '@components/Footer'
+import Header from '@components/Header'
+import Navigation from '@components/Navigation'
 import '../styles/index.css'
-import Header from './Header'
-import Navigation from './Navigation'
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
