@@ -51,7 +51,10 @@ const HeroGrid = () => {
                   'https://picsum.photos/400',
                   'https://picsum.photos/800',
                 ].map(url => (
-                  <article className='flex-shrink max-w-full w-full sm:w-1/2'>
+                  <article
+                    key={url}
+                    className='flex-shrink max-w-full w-full sm:w-1/2'
+                  >
                     <div className='relative hover-img max-h-48 overflow-hidden'>
                       <a href='#'>
                         <Image
