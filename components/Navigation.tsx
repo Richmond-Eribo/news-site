@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Search from './Search'
 
 const NavLinks = [
@@ -19,7 +20,7 @@ const moreNavLinks = [
 
 const Navigation = () => {
   return (
-    <nav className='bg-black'>
+    <nav className='bg-black sticky top-0 z-[9999]'>
       <div className='xl:container mx-auto px-3 sm:px-4 xl:px-2'>
         <div className='flex justify-between'>
           <div className='mx-w-10 text-2xl font-bold capitalize text-white flex items-center'>
@@ -34,15 +35,16 @@ const Navigation = () => {
                   key={navLink.navTitle}
                   className='relative border-l border-gray-800 hover:bg-gray-900'
                 >
-                  <a
+                  <Link
                     className='block py-3 px-6 border-b-2 border-transparent'
                     href={navLink.navUrl}
                   >
                     {navLink.navTitle}
-                  </a>
+                  </Link>
                 </li>
               ))}
 
+              {/* more */}
               <li className='dropdown relative border-l border-gray-800 hover:bg-gray-900'>
                 <a
                   className='block py-3 px-6 border-b-2 border-transparent'
@@ -134,29 +136,6 @@ const Navigation = () => {
                     >
                       Post
                     </a>
-
-                    {/* <!--dropdown submenu--> */}
-                    {/* <ul
-                      className='dropdown-menu absolute left-full right-auto transform top-full z-50 border-b-0 text-left -mt-10 ml-0 mr-0 bg-white border border-gray-100'
-                      style={{minWidth: '12rem'}}
-                    >
-                      <li className='relative hover:bg-gray-50'>
-                        <a
-                          className='block py-2 px-6 border-b border-gray-100'
-                          href='#'
-                        >
-                          Post default
-                        </a>
-                      </li>
-                      <li className='relative hover:bg-gray-50'>
-                        <a
-                          className='block py-2 px-6 border-b border-gray-100'
-                          href='#'
-                        >
-                          Post fullwidth
-                        </a>
-                      </li>
-                    </ul> */}
                   </li>
                 </ul>
               </li>
@@ -182,9 +161,9 @@ const Navigation = () => {
                     aria-hidden='true'
                   >
                     <path
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      stroke-width='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth='2'
                       d='M4 6h16M4 12h16M4 18h16'
                     ></path>
                   </svg>{' '}

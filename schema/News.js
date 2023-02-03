@@ -1,7 +1,6 @@
 export const News = {
   title: 'string',
   date: 'Date',
-  time: 'time',
   body: 'long text',
   Category,
   thumbnail: 'imageUrl',

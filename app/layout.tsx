@@ -7,7 +7,12 @@ import '../styles/index.css'
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang='en'>
-      <head />
+      <head>
+        <link
+          rel='stylesheet'
+          href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css'
+        />
+      </head>
       <body>
         <div className=' mx-auto'>
           <Header />

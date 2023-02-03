@@ -41,4 +41,25 @@ export const categoryGrid = [
     imageUrl: 'https://picsum.photos/300',
     url: '#',
   },
+  {
+    title: ' 7 Tips to Save Money Booking Your Next Hotel Room',
+    excerpt:
+      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+    imageUrl: 'https://picsum.photos/300',
+    url: '#',
+  },
+  {
+    title: ' 8 Tips to Save Money Booking Your Next Hotel Room',
+    excerpt:
+      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+    imageUrl: 'https://picsum.photos/300',
+    url: '#',
+  },
+  {
+    title: ' 9 Tips to Save Money Booking Your Next Hotel Room',
+    excerpt:
+      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+    imageUrl: 'https://picsum.photos/300',
+    url: '#',
+  },
 ]
