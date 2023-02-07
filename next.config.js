@@ -4,7 +4,10 @@ module.exports = {
     // loader: 'custom',
     remotePatterns: [
       {
-        hostname: 'picsum.photos',
+        hostname: "picsum.photos",
+      },
+      {
+        hostname: "images.ctfassets.net",
       },
     ],
   },

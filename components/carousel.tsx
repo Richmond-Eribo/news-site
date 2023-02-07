@@ -28,16 +28,11 @@ const Carousel = () => {
                 modules={[Pagination]}
                 className='pb-10'
               >
-                {window &&
-                  categoryGrid.map(category => (
-                    <SwiperSlide
-                      style={{width: '25%'}}
-                      // className='w-[25%] slideSection'
-                      key={category.title}
-                    >
-                      <HorizontalPostCard post={category} />
-                    </SwiperSlide>
-                  ))}
+                {categoryGrid.map(category => (
+                  <SwiperSlide style={{width: '25%'}} key={category.title}>
+                    <HorizontalPostCard post={category} />
+                  </SwiperSlide>
+                ))}
               </Swiper>
             </div>
           </div>

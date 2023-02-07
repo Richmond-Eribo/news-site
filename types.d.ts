@@ -1,34 +1,25 @@
-export interface NewsCollectionItems {
-title: string
-slug: string
-thumbnail: string
+type Thumbnail = {
+  fileName: string
+  url: string
 }
 
+type Sys = {
+  id: string
+  publishedAt: string
+}
 
-// slug
-// title
-// coverImage {
-//   url
-// }
-// date
-// author {
-//   name
-  // picture {
-  //   url
-  // }
-// }
-// excerpt
-// content {
-//   json
-//   links {
-//     assets {
-//       block {
-//         sys {
-//           id
-//         }
-//         url
-//         description
-//       }
-//     }
-//   }
-// }
+type Author = {
+  name: string
+}
+export interface NewsPreviewField {
+  title: string
+  thumbnail: Thumbnail
+  sys: Sys
+  slug: string
+  categories: string
+  excerpt: string
+  author: Author
+  body?: {
+    json: JSON
+  }
+}
