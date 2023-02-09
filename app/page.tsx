@@ -66,6 +66,7 @@ const Home = () => {
         </Suspense>
       </AsideWithAd>
 
+      {/* @ts-expect-error */}
       <AsideWithTopNews position="right">
         <Suspense fallback={<LoadingLargeGridSkeleton />}>
           {/* @ts-expect-error Server Component */}
