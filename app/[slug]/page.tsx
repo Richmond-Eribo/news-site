@@ -16,7 +16,7 @@ const News = async ({params: {slug}}: {params: {slug: string | undefined}}) => {
   return (
     <article>
       <AsideWithTopNews position="right">
-        {/* <div className="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
+        <div className="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
           <NewsHeader
             title={newsPost.title && newsPost.title}
             author={newsPost.author.name}
@@ -29,8 +29,7 @@ const News = async ({params: {slug}}: {params: {slug: string | undefined}}) => {
           />
 
           <NewsBody content={newsPost.body} />
-        </div> */}
-        <p>hi</p>
+        </div>
       </AsideWithTopNews>
     </article>
   )
