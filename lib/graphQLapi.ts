@@ -39,7 +39,7 @@ body {
 }
 `
 
-// returns value or null
+// a function that takes in an arguement and returns a string or a nullish value
 function stringOrNull(arg?: string) {
   const value = JSON.stringify(arg) || null
   return value
@@ -55,7 +55,7 @@ function extractPostEntries(fetchResponse: any) {
   return fetchResponse?.data?.newsCollection?.items
 }
 
-// fetch GraphQl function
+// fetch GraphQl function with header
 async function fetchGraphQL<T>(query: string, preview = false): Promise<T> {
   return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
@@ -74,8 +74,8 @@ async function fetchGraphQL<T>(query: string, preview = false): Promise<T> {
   )
     .then(response => response.json())
     .catch(error => {
-      notFound()
-      // throw error
+      // notFound()
+      throw error
     })
 }
 
@@ -97,6 +97,7 @@ export async function getPostWithFilter<T>({
   limit?: number
   withBody?: boolean
 }) {
+  // the fetchGraphQL function with an argument.
   const entries = await fetchGraphQL<T>(
     `query {
         newsCollection (
@@ -132,5 +133,27 @@ export async function getAllSlugs<T>({limit = 50}: {limit?: number}) {
     }
   }`)
 
+  return extractPostEntries(entries) as T
+}
+
+export async function getSearchedPost<T>(
+  searchQuery: string,
+  withBody?: boolean
+) {
+  const entries = await fetchGraphQL<T>(
+    `query {
+      newsCollection (
+        where:{ title_contains: ${stringOrNull(searchQuery)}, }) {
+        items {
+          ${
+            withBody
+              ? POST_GRAPHQL_FIELDS_WITH_BODY
+              : POST_GRAPHQL_FIELDS_WITHOUT_BODY
+          }
+        }
+      }
+    }`
+  )
+  // return entries
   return extractPostEntries(entries) as T
 }

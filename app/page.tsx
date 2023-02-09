@@ -13,7 +13,7 @@ import {getPostWithFilter} from "@lib/graphQLapi"
 import {Suspense} from "react"
 import {NewsPreviewField} from "types"
 
-const Home = async () => {
+const Home = () => {
   // const post = getAllPostsForHome()
 
   // const filteredNews = await getPostWithFilter({skip: 0})

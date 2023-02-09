@@ -5,7 +5,7 @@ import {NewsPreviewField} from "types"
 const SmallHeroCard = ({news}: {news: NewsPreviewField}) => {
   return (
     <article className="flex-shrink max-w-full w-full sm:w-1/2">
-      <div className="relative hover-img h-48 overflow-hidden">
+      <div className="relative  h-48 overflow-hidden">
         {/* <Link href={`/`}> */}
         <Image
           fill
