@@ -1,5 +1,5 @@
 import Link from "next/link"
-import Search from "./Search"
+import Search from "./search"
 
 const NavLinks = [
   "news",
