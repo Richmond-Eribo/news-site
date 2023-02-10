@@ -62,7 +62,7 @@ const Search = () => {
       {/* search form */}
       {openSearch && (
         <div
-          className={` absolute transition-all duration-200 ease-in-out  -bottom-10 right-0 h-16 border-l border-r border-b  top-12  text-left bg-black text-gray-700  border-gray-100 mt-1 p-3`}
+          className={` absolute transition-all duration-200 ease-in-out -right-24  -bottom-10 md:right-0 h-16 border-l border-r border-b  top-12  text-left bg-black text-gray-700  border-gray-100 mt-1 p-3`}
           style={{minWidth: "20rem"}}
         >
           <form
