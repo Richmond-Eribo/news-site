@@ -24,7 +24,7 @@ const AsideWithTopNews = async ({
           {children}
           {/* <!-- right --> */}
           <div
-            className={`flex-shrink max-w-full w-full lg:w-1/3  lg:pt-14 lg:pb-8 order-first  ${
+            className={`flex-shrink max-w-full w-full lg:w-1/3  lg:pt-14 lg:pb-8   ${
               position === "right"
                 ? "lg:order-last lg:pl-8"
                 : "lg:order-first lg:pr-8"

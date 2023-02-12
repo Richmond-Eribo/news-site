@@ -81,6 +81,14 @@ const Home = () => {
         </Suspense>
       </AsideWithAd>
 
+      {/* @ts-expect-error */}
+      <AsideWithTopNews position="right">
+        <Suspense fallback={<LoadingLargeGridSkeleton />}>
+          {/* @ts-expect-error Server Component */}
+          <LargePostGrid promise={educationCategory} />
+        </Suspense>
+      </AsideWithTopNews>
+
       <AsideWithAd position="right">
         <Suspense fallback={<LoadingSmallGridSkeleton />}>
           {/* @ts-expect-error Server Component */}

@@ -1,15 +1,7 @@
+import {NavLinks} from "@schema/data"
 import Link from "next/link"
+import MobileMenu from "./mobile-menu"
 import Search from "./search"
-
-const NavLinks = [
-  "news",
-  "sports",
-  "politics",
-  "business",
-  "health",
-  "religion",
-  "editorial",
-]
 
 const moreNavLinks = ["videos", "opinions", "investigation"]
 
@@ -154,30 +146,8 @@ const Navigation = () => {
               {/* search button it is client */}
               <Search />
 
-              <div className="relative hover:bg-gray-800 block lg:hidden">
-                <button
-                  type="button"
-                  className="menu-mobile block py-3 px-6 border-b-2 border-transparent"
-                >
-                  <span className="sr-only">Mobile menu</span>
-                  <svg
-                    className="inline-block h-6 w-6 mr-2"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    ></path>
-                  </svg>{" "}
-                  Menu
-                </button>
-              </div>
+              {/* Mobile Navigation */}
+              <MobileMenu />
             </div>
           </div>
         </div>

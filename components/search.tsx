@@ -11,7 +11,7 @@ const Search = () => {
   // useState to handle form input value
   const [querySearch, setQuerySearch] = useState("")
 
-  // search Open and Close state
+  // useState to handle search Open and Close state
   const [openSearch, setOpenSearch] = useState(false)
 
   // Handles the submit event onSubmit, and also do not know how to type HTMLformEvent to include id's from the form
