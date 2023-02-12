@@ -8,7 +8,8 @@ import {Pagination} from "swiper"
 
 const Carousel = () => {
   // media query to check for smaller devices
-  const mobileDisplay = window.matchMedia("(max-width: 900px)")
+  // const mobileDisplay = window && window.matchMedia("(max-width: 900px)")
+  // causes error in prerendered page in build
 
   return (
     <div className="relative bg-gray-50">
@@ -24,9 +25,20 @@ const Carousel = () => {
               </div>
               <Swiper
                 slidesPerView={"auto"}
-                spaceBetween={mobileDisplay.matches ? 250 : 30}
+                spaceBetween={250}
                 pagination={{
                   clickable: true,
+                }}
+                breakpoints={{
+                  300: {
+                    spaceBetween: 250,
+                  },
+                  868: {
+                    spaceBetween: 200,
+                  },
+                  1024: {
+                    spaceBetween: 50,
+                  },
                 }}
                 modules={[Pagination]}
                 className="pb-10"

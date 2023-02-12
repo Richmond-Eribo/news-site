@@ -13,6 +13,7 @@ const CategoryPage = ({params: {slug}}: {params: {slug: string}}) => {
   })
   return (
     <div className="bg-gray-50 pb-10">
+      {/* @ts-expect-error */}
       <AsideWithTopNews position="right">
         {/* @ts-expect-error Server Component */}
         <LargePostGrid withImage promise={category} />
