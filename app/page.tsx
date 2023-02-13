@@ -7,7 +7,6 @@ import SmallPostGrid from "@components/grids/Small-post-grid"
 import LoadingHeroGridSkeleton from "@components/loadingComponents/hero-grid-loader"
 import LoadingLargeGridSkeleton from "@components/loadingComponents/large-grid-loader"
 import LoadingSmallGridSkeleton from "@components/loadingComponents/small-grid-loader"
-import {getAllPostsForHome, trial} from "@lib/api"
 import {getPostWithFilter} from "@lib/graphQLapi"
 
 import {Suspense} from "react"

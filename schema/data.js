@@ -1,3 +1,4 @@
+// links for the nav
 export const NavLinks = [
   // "news",
   "sports",
@@ -10,6 +11,7 @@ export const NavLinks = [
   // "editorial",
 ]
 
+// this array is for dummy content
 export const categoryGrid = [
   {
     title: "1  Tips to Save Money Booking Your Next Hotel Room",
