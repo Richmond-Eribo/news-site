@@ -5,9 +5,10 @@ import {NewsPreviewField} from "types"
 const LargeHeroCard = ({news}: {news: NewsPreviewField}) => {
   return (
     <div className="flex-shrink max-w-full  w-full lg:w-1/2 pb-1 lg:pb-0 lg:pr-2 relative h-98 overflow-hidden">
-      <div className="relative w-full h-full">
+      <div className="relative overflow-hidden w-full h-full">
         <Image
           fill
+          style={{objectFit: "cover"}}
           className="max-w-full w-full mx-auto h-auto"
           src={news.thumbnail.url}
           alt="Image description"

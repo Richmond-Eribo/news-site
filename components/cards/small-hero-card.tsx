@@ -8,6 +8,7 @@ const SmallHeroCard = ({news}: {news: NewsPreviewField}) => {
       <div className="relative  h-48 overflow-hidden">
         {/* <Link href={`/`}> */}
         <Image
+          style={{objectFit: "cover"}}
           fill
           className="max-w-full w-full mx-auto h-auto"
           src={news.thumbnail.url}

@@ -14,12 +14,13 @@ const HorizontalPostCard = ({
 }) => {
   return (
     <div className="hover-img min-w-[320px] bg-white">
-      <figure className="relative h-56 block">
+      <figure className="relative overflow-hidden h-56 block">
         <Image
           // className='max-w-full w-full mx-auto'
           src={post.imageUrl}
           alt="alt title"
           fill
+          style={{objectFit: "cover"}}
         />
       </figure>
       <div className="py-3 px-6">

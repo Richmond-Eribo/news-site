@@ -3,21 +3,19 @@ import logo from "../public/logo.jpg"
 
 const Header = () => {
   return (
-    <header className="flex flex-col items-center   justify-between">
+    <header className="flex flex-col items-center my-2  justify-between">
       {/* <div>
         <Image src={logo} alt='logo' />
       </div> */}
 
-      <div
+      {/* <div
         className="bg-gray-100 h-32 text-zinc-400
        w-full flex-1 text-3xl text-center"
       >
         Advertisement
-      </div>
-      <p className="bg-black text-center text-white font-medium tracking-wider py-3 w-full ">
-        <span className="w-1 h-4 translate-y-1 bg-red-700 inline-block mr-2"></span>
-        <span className="font-bold">NOTE:</span> This is a demo. No article is
-        atributed to TheNews.
+      </div> */}
+      <p className="bg-red-500 text-xs text-center mx-auto text-white font-medium tracking-wider py-2 w-11/12 lg:w-1/3   rounded-lg ">
+        This is a demo. No article should be atributed to TheNews.
       </p>
     </header>
   )

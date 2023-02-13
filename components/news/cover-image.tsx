@@ -11,13 +11,14 @@ const CoverImage = ({
   url: string
 }) => {
   return (
-    <figure className="relative w-full h-[500px]">
+    <figure className="relative overflow-hidden w-full h-[300px] lg:h-[500px]">
       <Image
         fill
         alt={`Cover Image for ${title}`}
         className={cn("shadow-small", {
           "hover:shadow-medium transition-shadow duration-200": slug,
         })}
+        style={{objectFit: "cover"}}
         src={url}
       />
     </figure>
