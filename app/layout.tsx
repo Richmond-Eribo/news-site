@@ -18,14 +18,15 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         />
       </head>
       <body>
-        <Gtag />
-        <div className=" mx-auto ">
-          <Header />
-          <Navigation />
-          {children}
-          {/* <ScrollToTop /> */}
-          <Footer />
-        </div>
+        <Gtag>
+          <div className=" mx-auto ">
+            <Header />
+            <Navigation />
+            {children}
+            {/* <ScrollToTop /> */}
+            <Footer />
+          </div>
+        </Gtag>
 
         <Script
           async

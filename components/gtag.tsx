@@ -1,12 +1,12 @@
 "use client"
 
 import {useRouter, usePathname, useSearchParams} from "next/navigation"
-import {useEffect} from "react"
+import {ReactNode, useEffect} from "react"
 import * as gtag from "../lib/gtag"
 
 // logging page views to google analytics
 
-export default function Gtag() {
+export default function Gtag({children}: {children: ReactNode}) {
   const router = useRouter()
   const pathname = usePathname()
   const searchparams = useSearchParams()
@@ -29,5 +29,5 @@ export default function Gtag() {
     }
   }, [pathname])
 
-  return <div></div>
+  return <div>{children}</div>
 }
