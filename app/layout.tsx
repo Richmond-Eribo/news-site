@@ -4,8 +4,11 @@ import Navigation from "@components/Navigation"
 import "../styles/index.css"
 import ScrollToTop from "@components/scroll-to-top"
 import Script from "next/script"
+import Gtag from "@components/gtag"
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
+  // Gtag
+
   return (
     <html lang="en">
       <head>
@@ -15,6 +18,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         />
       </head>
       <body>
+        <Gtag />
         <div className=" mx-auto ">
           <Header />
           <Navigation />
