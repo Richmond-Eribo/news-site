@@ -18,6 +18,7 @@ const News = async ({params: {slug}}: {params: {slug: string | undefined}}) => {
 
   return (
     <div>
+      <>{console.log(news)}</>
       {/* @ts-expect-error Server Component */}
       <AsideWithTopNews position="left">
         <article className="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
@@ -44,5 +45,7 @@ export default News
 export async function generateStaticParams() {
   const allSlugs = await getAllSlugs<{slug: string}[]>({})
 
-  return allSlugs.map(allSlug => ({slug: allSlug.slug.toString()}))
+  return allSlugs.slice(0, 3).map(allSlug => ({slug: allSlug.slug.toString()}))
 }
+
+// how to slice an array to get the first 5 items?
