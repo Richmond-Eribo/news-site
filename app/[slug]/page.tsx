@@ -45,7 +45,7 @@ export default News
 export async function generateStaticParams() {
   const allSlugs = await getAllSlugs<{slug: string}[]>({})
 
-  return allSlugs.slice(0, 3).map(allSlug => ({slug: allSlug.slug.toString()}))
+  return allSlugs.slice(0, 1).map(allSlug => ({slug: allSlug.slug.toString()}))
 }
 
 // how to slice an array to get the first 5 items?
