@@ -14,9 +14,9 @@ const Header = () => {
       >
         Advertisement
       </div> */}
-      <p className="bg-red-500 text-xs text-center mx-auto text-white font-medium tracking-wider py-2 w-11/12 lg:w-1/3   rounded-lg ">
+      {/* <p className="bg-red-500 text-xs text-center mx-auto text-white font-medium tracking-wider py-2 w-11/12 lg:w-1/3   rounded-lg ">
         This is a demo. No article should be atributed to TheNews.
-      </p>
+      </p> */}
     </header>
   )
 }
