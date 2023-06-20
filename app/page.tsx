@@ -56,7 +56,7 @@ const Home = () => {
         <HeroGrid promise={latestNews} />
       </Suspense>
 
-      <Carousel />
+      {/* <Carousel /> */}
 
       <AsideWithAd position="right">
         <Suspense fallback={<LoadingSmallGridSkeleton />}>

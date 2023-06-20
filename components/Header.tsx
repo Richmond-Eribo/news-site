@@ -8,12 +8,12 @@ const Header = () => {
         <Image src={logo} alt='logo' />
       </div> */}
 
-      {/* <div
-        className="bg-gray-100 h-32 text-zinc-400
-       w-full flex-1 text-3xl text-center"
+      <div
+        className="bg-gray-100 h-32 py-16 text-zinc-400
+       w-full flex-1 text-sm text-center"
       >
         Advertisement
-      </div> */}
+      </div>
       {/* <p className="bg-red-500 text-xs text-center mx-auto text-white font-medium tracking-wider py-2 w-11/12 lg:w-1/3   rounded-lg ">
         This is a demo. No article should be atributed to TheNews.
       </p> */}
