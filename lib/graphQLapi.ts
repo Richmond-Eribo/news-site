@@ -83,7 +83,7 @@ async function fetchGraphQL<T>(query: string, preview = false): Promise<T> {
 export async function getPostWithFilter<T>({
   skip = 0,
   category,
-  authorName = "admin",
+  authorName,
   title,
   slug,
   limit = 50,

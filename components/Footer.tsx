@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="flex-shrink max-w-full w-full lg:w-2/5 px-3 lg:pr-16">
               <div className="flex items-center mb-2">
                 <span className="text-3xl leading-normal mb-2 font-bold text-gray-100 mt-2">
-                  TheNews
+                  Naija Metro News
                 </span>
                 {/* <!-- <img src="src/img-min/logo.png" alt="LOGO"> --> */}
               </div>
@@ -174,9 +174,7 @@ const Footer = () => {
         <div className="container py-4 border-t border-gray-200 border-opacity-10">
           <div className="row">
             <div className="col-12 col-md text-center">
-              <p className="d-block my-3">
-                Copyright © The News - A Naija metro news| All rights reserved.
-              </p>
+              <p className="d-block my-3">Copyright © - Naija metro news.</p>
             </div>
           </div>
         </div>

@@ -23,7 +23,7 @@ const News = async ({params: {slug}}: {params: {slug: string | undefined}}) => {
       <AsideWithTopNews position="left">
         <article className="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
           <NewsHeader
-            title={newsPost.title && newsPost.title}
+            title={newsPost.title}
             author={newsPost.author.name}
             date={newsPost.sys.publishedAt}
           />

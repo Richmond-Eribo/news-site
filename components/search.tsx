@@ -21,7 +21,7 @@ const Search = () => {
     router.push(`/search/${querySearch}`)
   }
   return (
-    <div className=" relative border-r z-50  lg:border-l border-gray-800 hover:bg-gray-900">
+    <div className=" relative border-r z-50  lg:border-l border-white hover:bg-gray-900">
       <button
         onClick={() => setOpenSearch(current => !current)}
         className="block py-3 px-6 border-b-2 border-transparent"
