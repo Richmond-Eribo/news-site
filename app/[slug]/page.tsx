@@ -18,7 +18,7 @@ const News = async ({params: {slug}}: {params: {slug: string | undefined}}) => {
 
   return (
     <div>
-      <>{console.log(news)}</>
+      {/* <>{console.log(news)}</> */}
       {/* @ts-expect-error Server Component */}
       <AsideWithTopNews position="left">
         <article className="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
