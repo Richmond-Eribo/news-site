@@ -73,7 +73,7 @@ export async function generateMetadata({
       siteName: "Naija Metro News",
       images: [
         {
-          url: `https:${newsPost.thumbnail.url}`,
+          url: `${newsPost.thumbnail.url}`,
           width: 800,
           height: 600,
         },
@@ -86,7 +86,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: newsPost.title,
       description: newsPost.excerpt,
-      images: [`https:${newsPost.thumbnail.url}`],
+      images: [`${newsPost.thumbnail.url}`],
     },
     robots: {
       index: true,
