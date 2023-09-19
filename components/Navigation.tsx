@@ -8,137 +8,39 @@ const moreNavLinks = ["videos", "opinions", "investigation"]
 const Navigation = () => {
   return (
     <nav className="bg-red-600 sticky top-0 z-[9999]">
-      <div className="xl:container mx-auto px-3 sm:px-4 xl:px-2">
+      <div className="px-3 mx-auto xl:container sm:px-4 xl:px-2">
         <div className="flex justify-between">
           <Link
             href="/"
-            className="mx-w-10 text-2xl font-bold capitalize text-white flex items-center"
+            className="flex items-center text-2xl font-bold text-white capitalize mx-w-10"
           >
             Naija Metro News
           </Link>
 
           <div className="flex flex-row">
             {/* <!-- nav menu --> */}
-            <ul className="navbar hidden lg:flex lg:flex-row text-gray-400 text-sm items-center font-bold">
+            <ul className="items-center hidden text-sm font-bold text-gray-400 navbar lg:flex lg:flex-row">
               <li className="relative border-l border-white hover:bg-gray-900">
                 <Link
-                  className="block capitalize py-3 px-6 border-b-2 border-transparent"
+                  className="block px-6 py-3 capitalize border-b-2 border-transparent"
                   href={"/"}
                 >
                   Home
                 </Link>
               </li>
-              {NavLinks.map(navLink => (
+              {NavLinks.map((navLink: any) => (
                 <li
                   key={navLink}
                   className="relative border-l border-white hover:bg-gray-900"
                 >
                   <Link
-                    className="block capitalize py-3 px-6 border-b-2 border-transparent"
+                    className="block px-6 py-3 capitalize border-b-2 border-transparent"
                     href={`/category/${navLink}`}
                   >
                     {navLink}
                   </Link>
                 </li>
               ))}
-
-              {/* more */}
-              {/* <li className='dropdown relative border-l border-gray-800 hover:bg-gray-900'>
-                <a
-                  className='block py-3 px-6 border-b-2 border-transparent'
-                  href='#'
-                >
-                  More
-                </a>
-
-                <ul
-                  className='dropdown-menu font-normal absolute left-0 right-auto top-full z-50 border-b-0 text-left bg-white text-gray-700 border border-gray-100'
-                  style={{minWidth: '12rem'}}
-                >
-                  <li className=' relative hover:bg-gray-50'>
-                    <a
-                      className='block py-2 px-6 border-b border-gray-100'
-                      href='#'
-                    >
-                      Videos
-                    </a>
-                  </li>
-
-                  <li className='subdropdown relative hover:bg-gray-50'>
-                    <a
-                      className='block py-2 px-6 border-b border-gray-100'
-                      href='#'
-                    >
-                      Pages
-                    </a>
-
-                  {  
-                  // dropdown submenu
-                  }
-                    <ul
-                      className='dropdown-menu absolute left-full right-auto transform top-full z-50 border-b-0 text-left -mt-10 ml-0 mr-0 bg-white border border-gray-100'
-                      style={{minWidth: '12rem'}}
-                    >
-                      <li className='relative hover:bg-gray-50'>
-                        <a
-                          className='block py-2 px-6 border-b border-gray-100'
-                          href='#'
-                        >
-                          404
-                        </a>
-                      </li>
-                      <li className='relative hover:bg-gray-50'>
-                        <a
-                          className='block py-2 px-6 border-b border-gray-100'
-                          href='#'
-                        >
-                          Author
-                        </a>
-                      </li>
-                      <li className='relative hover:bg-gray-50'>
-                        <a
-                          className='block py-2 px-6 border-b border-gray-100'
-                          href='#'
-                        >
-                          Category
-                        </a>
-                      </li>
-                      <li className='relative hover:bg-gray-50'>
-                        <a
-                          className='block py-2 px-6 border-b border-gray-100'
-                          href='#'
-                        >
-                          Search
-                        </a>
-                      </li>
-                      <li className='relative hover:bg-gray-50'>
-                        <a
-                          className='block py-2 px-6 border-b border-gray-100'
-                          href='#'
-                        >
-                          Page
-                        </a>
-                      </li>
-                      <li className='relative hover:bg-gray-50'>
-                        <a
-                          className='block py-2 px-6 border-b border-gray-100'
-                          href='#'
-                        >
-                          Contact
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className='subdropdown relative hover:bg-gray-50'>
-                    <a
-                      className='block py-2 px-6 border-b border-gray-100'
-                      href='#'
-                    >
-                      Post
-                    </a>
-                  </li>
-                </ul>
-              </li> */}
             </ul>
 
             {/* <!-- search form & mobile nav --> */}
@@ -160,9 +62,9 @@ export default Navigation
 
 // An example of a link with sub links
 
-// <li className='subdropdown relative hover:bg-gray-50'>
+// <li className='relative subdropdown hover:bg-gray-50'>
 // <a
-//   className='block py-2 px-6 border-b border-gray-100'
+//   className='block px-6 py-2 border-b border-gray-100'
 //   href='#'
 // >
 //   Pages
@@ -173,12 +75,12 @@ export default Navigation
 }
 {
   /* <ul
-  className='dropdown-menu absolute left-full right-auto transform top-full z-50 border-b-0 text-left -mt-10 ml-0 mr-0 bg-white border border-gray-100'
+  className='absolute right-auto z-50 ml-0 mr-0 -mt-10 text-left transform bg-white border border-b-0 border-gray-100 dropdown-menu left-full top-full'
   style={{minWidth: '12rem'}}
 >
   <li className='relative hover:bg-gray-50'>
     <a
-      className='block py-2 px-6 border-b border-gray-100'
+      className='block px-6 py-2 border-b border-gray-100'
       href='#'
     >
       404
@@ -186,7 +88,7 @@ export default Navigation
   </li>
   <li className='relative hover:bg-gray-50'>
     <a
-      className='block py-2 px-6 border-b border-gray-100'
+      className='block px-6 py-2 border-b border-gray-100'
       href='#'
     >
       Author
@@ -194,7 +96,7 @@ export default Navigation
   </li>
   <li className='relative hover:bg-gray-50'>
     <a
-      className='block py-2 px-6 border-b border-gray-100'
+      className='block px-6 py-2 border-b border-gray-100'
       href='#'
     >
       Category
@@ -202,7 +104,7 @@ export default Navigation
   </li>
   <li className='relative hover:bg-gray-50'>
     <a
-      className='block py-2 px-6 border-b border-gray-100'
+      className='block px-6 py-2 border-b border-gray-100'
       href='#'
     >
       Search
@@ -210,7 +112,7 @@ export default Navigation
   </li>
   <li className='relative hover:bg-gray-50'>
     <a
-      className='block py-2 px-6 border-b border-gray-100'
+      className='block px-6 py-2 border-b border-gray-100'
       href='#'
     >
       Page
@@ -218,7 +120,7 @@ export default Navigation
   </li>
   <li className='relative hover:bg-gray-50'>
     <a
-      className='block py-2 px-6 border-b border-gray-100'
+      className='block px-6 py-2 border-b border-gray-100'
       href='#'
     >
       Contact

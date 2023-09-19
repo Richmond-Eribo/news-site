@@ -9,6 +9,8 @@ const MobileMenu = ({}) => {
   // useState of the navlinks
   const [menuNavLinks, setMenuNavLinks] = useState(false)
 
+  // const Navlink = useRef(second)
+
   // function that set the menu drawer and the navlinks state to false or true
   const menuOpen = () => {
     if (openMenu && menuNavLinks) {
@@ -23,11 +25,11 @@ const MobileMenu = ({}) => {
     }
   }
   return (
-    <div className="relative hover:bg-gray-800 block lg:hidden">
+    <div className="relative   block lg:hidden">
       <button
         onClick={menuOpen}
         type="button"
-        className="menu-mobile block py-3 px-6 border-b-2 border-transparent"
+        className="menu-mobile text-white block py-3 px-6 border-b-2 border-transparent"
       >
         <span className="sr-only">Mobile menu</span>
         <svg
@@ -53,15 +55,15 @@ const MobileMenu = ({}) => {
       </button>
 
       <div
-        className={`bg-black duration-500 ease-in  w-[300px]  absolute -left-44 translate-y-24  -top-full ${
-          openMenu ? "z-50 py-5" : "h-0"
+        className={`bg-white text-black duration-500 ease-in  w-[300px]  absolute -left-44 translate-y-24  -top-full my-2 ${
+          openMenu ? "z-50 py-5 pointer-events-auto" : "h-0 pointer-events-none"
         } `}
       >
         <ul className="">
           {NavLinks.map((navLink, index) => (
             <li
               key={index}
-              className={`relative duration  border-l border-gray-800 hover:bg-gray-900 ${
+              className={`relative duration  hover:bg-red-500 transition-all ease-in-out duration-300 ${
                 menuNavLinks ? "" : "opacity-0 "
               }   `}
             >

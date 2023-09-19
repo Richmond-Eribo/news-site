@@ -5,6 +5,29 @@ import "../styles/index.css"
 import ScrollToTop from "@components/scroll-to-top"
 import Script from "next/script"
 import Gtag from "@components/gtag"
+import type {Metadata} from "next"
+
+export const metadata: Metadata = {
+  title: "Naija Metro News",
+  description:
+    "Naija Metro is a Nigerian based news publishing website covering areas like Latest news, Business, Education, Breaking News,  Politics, Entertainment and Sports.",
+  openGraph: {
+    title: "Naija Metro News",
+    description:
+      "Naija Metro is a Nigerian based news publishing website covering areas like Latest news, Business, Education, Breaking News,  Politics, Entertainment and Sports.",
+    url: "https://naijametronews.com",
+    siteName: "Naija Metro News",
+    images: [
+      {
+        url: "/thenewssite.jpeg",
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: "en-US",
+    type: "website",
+  },
+}
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   // Gtag
@@ -19,7 +42,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       </head>
       <body>
         <Gtag>
-          <div className=" mx-auto ">
+          <div className="mx-auto ">
             <Header />
             <Navigation />
             {children}
