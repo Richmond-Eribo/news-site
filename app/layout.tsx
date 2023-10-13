@@ -7,6 +7,9 @@ import Script from "next/script"
 import Gtag from "@components/gtag"
 import type {Metadata} from "next"
 
+// Add
+export const dynamic = "force-dynamic"
+
 export const metadata: Metadata = {
   title: "Naija Metro News",
   description:
@@ -39,17 +42,13 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
         />
-      </head>
-      <body>
-        <Gtag>
-          <div className="mx-auto ">
-            <Header />
-            <Navigation />
-            {children}
-            {/* <ScrollToTop /> */}
-            <Footer />
-          </div>
-        </Gtag>
+
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3465737015534563"
+          crossOrigin="anonymous"
+          strategy="lazyOnload"
+        />
 
         <Script
           async
@@ -70,6 +69,17 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             `,
           }}
         />
+      </head>
+      <body>
+        <Gtag>
+          <div className="mx-auto ">
+            <Header />
+            <Navigation />
+            {children}
+            {/* <ScrollToTop /> */}
+            <Footer />
+          </div>
+        </Gtag>
       </body>
     </html>
   )
