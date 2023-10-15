@@ -12,10 +12,33 @@ import {getPostWithFilter} from "@lib/graphQLapi"
 import {Suspense} from "react"
 import {NewsPreviewField} from "types"
 
-const Home = () => {
+const Home = async () => {
   // const post = getAllPostsForHome()
 
   // const filteredNews = await getPostWithFilter({skip: 0})
+
+  const categories = [
+    {name: "education", limit: 6},
+    {name: "politics", limit: 6},
+    {name: "sports", limit: 6},
+    {name: "business", limit: 6},
+    {name: "security", limit: 10},
+  ]
+
+  // Create an array of promises for fetching news posts
+  const categoryPromises = categories.map(category => {
+    return getPostWithFilter<NewsPreviewField>({
+      skip: 0,
+      limit: category.limit,
+      category: category.name,
+    })
+  })
+
+  // Use Promise.all to fetch all news posts concurrently
+  const allNewsPromises = Promise.all(categoryPromises)
+
+  // Now, you can await the results
+  const allNews = await allNewsPromises
 
   // function to fetch news post by filter category,
   const latestNews = getPostWithFilter<NewsPreviewField[]>({

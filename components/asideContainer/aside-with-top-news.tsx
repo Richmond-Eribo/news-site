@@ -2,6 +2,8 @@ import {getPostWithFilter} from "@lib/graphQLapi"
 import Image from "next/image"
 import Link from "next/link"
 import {NewsPreviewField} from "types"
+import SquareAdCode from "../googleAds/googleAds"
+import AdCode from "@components/googleAds/googleAds"
 
 const AsideWithTopNews = async ({
   children,
@@ -53,20 +55,10 @@ const AsideWithTopNews = async ({
               </div>
             </div>
 
+            {/* square ad*/}
             <div className="text-sm py-6 sticky">
               <div className="w-full text-center">
-                <a className="uppercase" href="#">
-                  Advertisement
-                </a>
-                <a href="#">
-                  <Image
-                    width={300}
-                    height={100}
-                    className="mx-auto"
-                    src="https://picsum.photos/300"
-                    alt="advertisement area"
-                  />
-                </a>
+                <AdCode code="802235349" />
               </div>
             </div>
           </div>

@@ -19,9 +19,7 @@ const MobileMenu = ({}) => {
     } else {
       setOpenMenu(true)
 
-      setTimeout(() => {
-        setMenuNavLinks(true)
-      }, 300)
+      setMenuNavLinks(true)
     }
   }
   return (
@@ -29,7 +27,7 @@ const MobileMenu = ({}) => {
       <button
         onClick={menuOpen}
         type="button"
-        className="menu-mobile text-white block py-3 px-6 border-b-2 border-transparent"
+        className="menu-mobile text-gray-900 block py-3 px-6 border-b-2 border-transparent"
       >
         <span className="sr-only">Mobile menu</span>
         <svg
@@ -55,7 +53,7 @@ const MobileMenu = ({}) => {
       </button>
 
       <div
-        className={`bg-white text-black duration-500 ease-in  w-[300px]  absolute -left-44 translate-y-24  -top-full my-2 ${
+        className={`bg-white text-black   w-[300px]  absolute -left-44 translate-y-24  -top-full my-2 ${
           openMenu ? "z-50 py-5 pointer-events-auto" : "h-0 pointer-events-none"
         } `}
       >
@@ -63,7 +61,7 @@ const MobileMenu = ({}) => {
           {NavLinks.map((navLink, index) => (
             <li
               key={index}
-              className={`relative duration  hover:bg-red-500 transition-all ease-in-out duration-300 ${
+              className={`relative duration  hover:bg-red-500 hover:text-white  ${
                 menuNavLinks ? "" : "opacity-0 "
               }   `}
             >

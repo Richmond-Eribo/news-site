@@ -7,20 +7,20 @@ const moreNavLinks = ["videos", "opinions", "investigation"]
 
 const Navigation = () => {
   return (
-    <nav className="bg-red-600 sticky top-0 z-[9999]">
+    <nav className="bg-gray-100 sticky top-0 z-[9999] border-b border-t border-red-200">
       <div className="px-3 mx-auto xl:container sm:px-4 xl:px-2">
         <div className="flex justify-between">
           <Link
             href="/"
-            className="flex items-center text-2xl font-bold text-white capitalize mx-w-10"
+            className="flex items-center text-2xl font-bold text-red-500 capitalize mx-w-10"
           >
             Naija Metro News
           </Link>
 
           <div className="flex flex-row">
             {/* <!-- nav menu --> */}
-            <ul className="items-center hidden text-sm font-bold text-gray-400 navbar lg:flex lg:flex-row">
-              <li className="relative border-l border-white hover:bg-gray-900">
+            <ul className="items-center hidden text-sm font-bold text-gray-900 navbar lg:flex lg:flex-row">
+              <li className="relative border-l border-white hover:text-red-500">
                 <Link
                   className="block px-6 py-3 capitalize border-b-2 border-transparent"
                   href={"/"}
@@ -31,7 +31,7 @@ const Navigation = () => {
               {NavLinks.map((navLink: any) => (
                 <li
                   key={navLink}
-                  className="relative border-l border-white hover:bg-gray-900"
+                  className="relative border-l border-white hover:text-red-500"
                 >
                   <Link
                     className="block px-6 py-3 capitalize border-b-2 border-transparent"
