@@ -11,6 +11,7 @@ import type {Metadata} from "next"
 export const revalidate = 60
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://naijametronews.com"),
   title: "Naija Metro News",
   description:
     "Naija Metro is a Nigerian based news publishing website covering areas like Latest news, Business, Education, Breaking News,  Politics, Entertainment and Sports.",
