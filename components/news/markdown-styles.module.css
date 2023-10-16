@@ -16,3 +16,23 @@
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
 }
+
+/* Add styles for the table */
+.markdown table {
+  @apply w-full border; /* Apply the "w-full" and "border" classes to the table */
+}
+
+/* Add styles for the table rows */
+.markdown table tr {
+  @apply border-b; /* Add a bottom border to each table row */
+}
+
+/* Add styles for table header cells (th) */
+.markdown table th {
+  @apply bg-gray-200 border p-2; /* Example: Gray background, border, and padding */
+}
+
+/* Add styles for table data cells (td) */
+.markdown table td {
+  @apply border p-2; /* Example: Border and padding for data cells */
+}
