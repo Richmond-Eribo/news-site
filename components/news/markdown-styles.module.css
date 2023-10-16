@@ -29,10 +29,10 @@
 
 /* Add styles for table header cells (th) */
 .markdown table th {
-  @apply bg-gray-200 border p-2; /* Example: Gray background, border, and padding */
+  @apply bg-gray-100 border border-white p-1 text-left; /* Example: Gray background, border, and padding */
 }
 
 /* Add styles for table data cells (td) */
 .markdown table td {
-  @apply border p-2; /* Example: Border and padding for data cells */
+  @apply border p-1; /* Example: Border and padding for data cells */
 }
