@@ -1,0 +1,16 @@
+import {MetadataRoute} from "next"
+import {getAllSlugs, getPostWithFilter} from "@lib/graphQLapi"
+
+export async function generateSitemaps() {
+  const allSlugs = await getAllSlugs<{slug: string}[]>({})
+
+  const slug = allSlugs.map(allSlug => ({slug: allSlug.slug.toString()}))
+  return slug
+}
+
+export default function sitemap(slug: {slug: string}[]): MetadataRoute.Sitemap {
+  return slug.map(sl => ({
+    url: `https://naijametronews.com/${sl}`,
+    lastModified: new Date(),
+  }))
+}

@@ -20,9 +20,8 @@ const News = async ({params: {slug}}: {params: {slug: string | undefined}}) => {
   return (
     <div>
       {/* <>{console.log(news)}</> */}
-      {/* @ts-expect-error Server Component */}
       <AsideWithTopNews position="left">
-        <article className="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
+        <article className="flex-shrink w-full max-w-full overflow-hidden lg:w-2/3">
           <NewsHeader
             title={newsPost.title}
             author={newsPost.author.name}
@@ -66,6 +65,7 @@ export async function generateMetadata({
   return {
     title: newsPost.title,
     description: newsPost.excerpt,
+    authors: newsPost.author,
     openGraph: {
       title: newsPost.title,
       description: newsPost.excerpt,
