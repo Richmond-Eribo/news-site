@@ -6,6 +6,8 @@ import ScrollToTop from "@components/scroll-to-top"
 import Script from "next/script"
 import Gtag from "@components/gtag"
 import type {Metadata} from "next"
+import {Analytics} from "@vercel/analytics/react"
+import {SpeedInsights} from "@vercel/speed-insights/next"
 
 // Add
 export const revalidate = 60
@@ -154,9 +156,11 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   gtag('js', new Date());
 
   gtag('config', ${process.env.GTAG_MEASUREMENT_ID})
-            `,
+  `,
           }}
         />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
