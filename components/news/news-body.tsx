@@ -28,7 +28,7 @@ const options = {
 export default function NewsBody({content}: {content: any}) {
   return (
     <div className={markdownStyles["markdown"]}>
-      {documentToReactComponents(content.json)}
+      {documentToReactComponents(content.json, options)}
     </div>
   )
 }
