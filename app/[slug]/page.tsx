@@ -43,12 +43,14 @@ const News = async ({params: {slug}}: {params: {slug: string | undefined}}) => {
 
 export default News
 
+// generate the slugs
 export async function generateStaticParams() {
   const allSlugs = await getAllSlugs<{slug: string}[]>({})
 
-  return allSlugs.map(allSlug => ({slug: allSlug.slug.toString()}))
+  return allSlugs.map(allSlug => ({slug: allSlug.slug}))
 }
 
+// generate metadata from slug
 export async function generateMetadata({
   params,
 }: {
