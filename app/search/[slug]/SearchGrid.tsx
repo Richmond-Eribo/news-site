@@ -6,35 +6,33 @@ import Link from "next/link"
 // doing this to make the search page a client page
 // import {useSearchParams} from "next/navigation"
 import {NewsPreviewField} from "types"
-const SearchGrid = async ({
-  promise,
-  alternatePromise,
+const SearchGrid = ({
+  searchedNews,
+  alternateNews,
   withImage,
   param,
 }: {
-  promise: Promise<NewsPreviewField[]>
+  searchedNews: NewsPreviewField[]
   withImage?: boolean
-  alternatePromise: Promise<NewsPreviewField[]>
+  alternateNews: NewsPreviewField[]
   param: string
 }) => {
-  const SearchedNews = await promise
-  const news = await alternatePromise
-  const wideCard = SearchedNews[0]
-  const smallCard = SearchedNews.slice(1, 10)
-  console.log(SearchedNews)
+  const wideCard = searchedNews[0]
+  const smallCard = searchedNews.slice(1, 10)
+  // console.log(searchedNews)
 
-  if (SearchedNews.length == 0) {
+  if (searchedNews.length == 0) {
     return (
-      <div className="flex-shrink max-w-full w-full lg:w-2/3  overflow-hidden">
-        <h2 className="text-gray-800 pb-10 lg:leading-10 text-3xl lg:text-5xl font-bold">
+      <div className="flex-shrink w-full max-w-full overflow-hidden lg:w-2/3">
+        <h2 className="pb-10 text-3xl font-bold text-gray-800 lg:leading-10 lg:text-5xl">
           Oppssie, could not find your search
         </h2>
-        <p className="text-gray-800 text-2xl font-bold  pb-5">
-          <span className="inline-block  h-5 border-l-3 border-red-600 mr-2"></span>
+        <p className="pb-5 text-2xl font-bold text-gray-800">
+          <span className="inline-block h-5 mr-2 border-red-600 border-l-3"></span>
           check these options
         </p>
         <div className="flex flex-row flex-wrap -mx-3">
-          {news.map(post => (
+          {alternateNews.map(post => (
             <VerticalPostCard
               key={post.title}
               news={post}
@@ -47,9 +45,9 @@ const SearchGrid = async ({
   }
 
   return (
-    <div className="flex-shrink max-w-full w-full lg:w-2/3  overflow-hidden">
-      <div className="w-full flex justify-between py-3">
-        <h2 className="text-gray-800 lg:leading-10 text-3xl lg:text-5xl font-bold">
+    <div className="flex-shrink w-full max-w-full overflow-hidden lg:w-2/3">
+      <div className="flex justify-between w-full py-3">
+        <h2 className="text-3xl font-bold text-gray-800 lg:leading-10 lg:text-5xl">
           Showing you searches for {param}
         </h2>
       </div>

@@ -27,55 +27,31 @@ const Home = async () => {
 
   // Create an array of promises for fetching news posts
   const categoryPromises = categories.map(category => {
-    return getPostWithFilter<NewsPreviewField>({
+    return getPostWithFilter<NewsPreviewField[]>({
       skip: 0,
       limit: category.limit,
       category: category.name,
     })
   })
 
-  // Use Promise.all to fetch all news posts concurrently
-  const allNewsPromises = Promise.all(categoryPromises)
-
-  // Now, you can await the results
-  const allNews = await allNewsPromises
+  // Use Promise.all to fetch all news posts concurrently and await them
+  const allNews = await Promise.all(categoryPromises)
 
   // function to fetch news post by filter category,
-  const latestNews = getPostWithFilter<NewsPreviewField[]>({
+  const latestNews = await getPostWithFilter<NewsPreviewField[]>({
     skip: 0,
     limit: 5,
   })
 
-  const educationCategory = getPostWithFilter<NewsPreviewField[]>({
-    skip: 0,
-    limit: 6,
-    category: "education",
-  })
-  const politicsCategory = getPostWithFilter<NewsPreviewField[]>({
-    skip: 0,
-    limit: 6,
-    category: "politics",
-  })
-  const sportsCategory = getPostWithFilter<NewsPreviewField[]>({
-    skip: 0,
-    limit: 6,
-    category: "sports",
-  })
-  const businessCategory = getPostWithFilter<NewsPreviewField[]>({
-    skip: 0,
-    limit: 6,
-    category: "business",
-  })
-  const securityCategory = getPostWithFilter<NewsPreviewField[]>({
-    skip: 0,
-    limit: 10,
-    category: "security",
+  // function to fetch more news for the aside with news component
+  const moreNews = await getPostWithFilter<NewsPreviewField[]>({
+    skip: 5,
+    limit: 5,
   })
 
   return (
     <div>
       <Suspense fallback={<LoadingHeroGridSkeleton />}>
-        {/* @ts-expect-error Server Component */}
         <HeroGrid promise={latestNews} />
       </Suspense>
 
@@ -83,38 +59,31 @@ const Home = async () => {
 
       <AsideWithAd position="right">
         <Suspense fallback={<LoadingSmallGridSkeleton />}>
-          {/* @ts-expect-error Server Component */}
-          <SmallPostGrid promise={businessCategory} />
+          <SmallPostGrid news={allNews[0]} />
         </Suspense>
       </AsideWithAd>
 
-      {/* @ts-expect-error */}
-      <AsideWithTopNews position="right">
+      <AsideWithTopNews moreNews={moreNews} position="right">
         <Suspense fallback={<LoadingLargeGridSkeleton />}>
-          {/* @ts-expect-error Server Component */}
-          <LargePostGrid promise={securityCategory} />
+          <LargePostGrid news={allNews[1]} />
         </Suspense>
       </AsideWithTopNews>
 
       <AsideWithAd position="left">
         <Suspense fallback={<LoadingSmallGridSkeleton />}>
-          {/* @ts-expect-error Server Component */}
-          <SmallPostGrid promise={politicsCategory} />
+          <SmallPostGrid news={allNews[2]} />
         </Suspense>
       </AsideWithAd>
 
-      {/* @ts-expect-error */}
-      <AsideWithTopNews position="right">
+      <AsideWithTopNews moreNews={moreNews} position="right">
         <Suspense fallback={<LoadingLargeGridSkeleton />}>
-          {/* @ts-expect-error Server Component */}
-          <LargePostGrid promise={educationCategory} />
+          <LargePostGrid news={allNews[3]} />
         </Suspense>
       </AsideWithTopNews>
 
       <AsideWithAd position="right">
         <Suspense fallback={<LoadingSmallGridSkeleton />}>
-          {/* @ts-expect-error Server Component */}
-          <SmallPostGrid promise={sportsCategory} />
+          <SmallPostGrid news={allNews[4]} />
         </Suspense>
       </AsideWithAd>
     </div>

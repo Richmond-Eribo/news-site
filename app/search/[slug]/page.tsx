@@ -8,8 +8,8 @@ import SearchGrid from "./SearchGrid"
 const page = async ({params: {slug}}: {params: {slug: string}}) => {
   const slugParam = slug.replaceAll("%20", " ")
 
-  const search = getSearchedPost<NewsPreviewField[]>(slugParam)
-  const latestNews = getPostWithFilter<NewsPreviewField[]>({
+  const search = await getSearchedPost<NewsPreviewField[]>(slugParam)
+  const latestNews = await getPostWithFilter<NewsPreviewField[]>({
     skip: 0,
     limit: 5,
   })
@@ -17,13 +17,12 @@ const page = async ({params: {slug}}: {params: {slug: string}}) => {
   // console.log(slugParam)
   return (
     <>
-      <h2 className="text-gray-800 lg:leading-10 text-3xl lg:text-5xl font-bold"></h2>
+      <h2 className="text-3xl font-bold text-gray-800 lg:leading-10 lg:text-5xl"></h2>
       <AsideWithAd position="right">
         <Suspense fallback={<LoadingLargeGridSkeleton />}>
-          {/* @ts-expect-error Server Component */}
           <SearchGrid
-            promise={search}
-            alternatePromise={latestNews}
+            searchedNews={search}
+            alternateNews={latestNews}
             param={slugParam}
             withImage
           />

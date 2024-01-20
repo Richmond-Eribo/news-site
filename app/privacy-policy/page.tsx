@@ -1,23 +1,22 @@
-import AsideWithTopNews from "@components/asideContainer/aside-with-top-news"
+import AsideWithAd from "@components/asideContainer/aside-with-ad"
 import NewsBody from "@components/news/news-body"
 
 const page = () => {
   return (
     <div>
-      {/* @ts-expect-error Server Component */}
-      <AsideWithTopNews position="left">
-        <article className="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
+      <AsideWithAd position="left">
+        <article className="flex-shrink w-full max-w-full overflow-hidden lg:w-2/3">
           <dl className="list-decimal">
             {privacyContent.map(p => (
               <>
-                <dt className="font-bold text-2xl mb-3 mt-10">{p.dt} </dt>
+                <dt className="mt-10 mb-3 text-2xl font-bold">{p.dt} </dt>
                 {typeof p.dd === "string" ? (
-                  <dd className="text-lg mb-8">{p.dd} </dd>
+                  <dd className="mb-8 text-lg">{p.dd} </dd>
                 ) : (
                   p.dd?.map((d, i) => (
                     <>
-                      <dt className="font-bold text-lg ">{d.dt} </dt>
-                      <dd className="text-lg mb-3">{d.dd} </dd>
+                      <dt className="text-lg font-bold ">{d.dt} </dt>
+                      <dd className="mb-3 text-lg">{d.dd} </dd>
                     </>
                   ))
                 )}
@@ -25,7 +24,7 @@ const page = () => {
             ))}
           </dl>
         </article>
-      </AsideWithTopNews>
+      </AsideWithAd>
     </div>
   )
 }

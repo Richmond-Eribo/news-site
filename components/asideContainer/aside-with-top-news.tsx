@@ -5,22 +5,18 @@ import {NewsPreviewField} from "types"
 import SquareAdCode from "../googleAds/googleAds"
 import AdCode from "@components/googleAds/googleAds"
 
-const AsideWithTopNews = async ({
+const AsideWithTopNews = ({
   children,
   position,
+  moreNews,
 }: {
   children: React.ReactNode
   position: "left" | "right"
+  moreNews: NewsPreviewField[]
 }) => {
-  // function to fetch news post by filter category,
-  const moreNews = await getPostWithFilter<NewsPreviewField[]>({
-    skip: 5,
-    limit: 5,
-  })
-
   return (
-    <div className="bg-gray-50 py-6">
-      <div className="xl:container mx-auto px-3 sm:px-4 xl:px-2">
+    <div className="py-6 bg-gray-50">
+      <div className="px-3 mx-auto xl:container sm:px-4 xl:px-2">
         <div className="flex flex-row flex-wrap">
           {/* <!-- Left --> */}
           {children}
@@ -41,10 +37,10 @@ const AsideWithTopNews = async ({
                   {moreNews.map(singleNews => (
                     <li
                       key={singleNews.title}
-                      className="border-b  border-gray-100 hover:bg-gray-50"
+                      className="border-b border-gray-100 hover:bg-gray-50"
                     >
                       <Link
-                        className="text-lg font-bold  px-6 py-3 flex flex-row items-center"
+                        className="flex flex-row items-center px-6 py-3 text-lg font-bold"
                         href={`/${singleNews.slug}`}
                       >
                         {singleNews.title}
@@ -56,7 +52,7 @@ const AsideWithTopNews = async ({
             </div>
 
             {/* square ad*/}
-            <div className="text-sm py-6 sticky">
+            <div className="sticky py-6 text-sm">
               <div className="w-full text-center">
                 <AdCode code="802235349" />
               </div>

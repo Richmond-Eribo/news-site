@@ -4,7 +4,7 @@ import {useRouter} from "next/navigation"
 
 class AdCodeWithoutRouter extends React.Component {
   renderAds() {
-    ;((window.adsbygoogle = window.adsbygoogle) || []).push({})
+    ;(window.adsbygoogle = window.adsbygoogle) || []
   }
 
   componentDidMount() {

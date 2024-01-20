@@ -17,11 +17,16 @@ const News = async ({params: {slug}}: {params: {slug: string | undefined}}) => {
   // media query to check for smaller devices
   // const mobileDisplay = window?.matchMedia("(max-width: 900px)")
 
+  // function to fetch more news for the aside with news component
+  const moreNews = await getPostWithFilter<NewsPreviewField[]>({
+    skip: 5,
+    limit: 5,
+  })
+
   return (
     <div>
       {/* <>{console.log(news)}</> */}
-      {/* @ts-expect-error Server Component */}
-      <AsideWithTopNews position="left">
+      <AsideWithTopNews moreNews={moreNews} position="left">
         <article className="flex-shrink w-full max-w-full overflow-hidden lg:w-2/3">
           <NewsHeader
             title={newsPost.title}
