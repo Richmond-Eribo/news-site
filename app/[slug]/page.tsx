@@ -4,7 +4,8 @@ import NewsHeader from "@components/news/news-header"
 import {getAllSlugs, getPostWithFilter} from "@lib/graphQLapi"
 import {NewsPreviewField} from "types"
 import CoverImage from "@components/news/cover-image"
-import {Metadata, ResolvingMetadata} from "next"
+import {Metadata} from "next"
+// import Consolelog from "@components/Consolelog"
 
 const News = async ({params: {slug}}: {params: {slug: string | undefined}}) => {
   const news = await getPostWithFilter<NewsPreviewField[]>({
@@ -25,23 +26,25 @@ const News = async ({params: {slug}}: {params: {slug: string | undefined}}) => {
 
   return (
     <div>
-      {/* <>{console.log(news)}</> */}
-      <AsideWithTopNews moreNews={moreNews} position="left">
-        <article className="flex-shrink w-full max-w-full overflow-hidden lg:w-2/3">
-          <NewsHeader
-            title={newsPost.title}
-            author={newsPost.author.name}
-            date={newsPost.sys.publishedAt}
-          />
-          <CoverImage
-            url={newsPost.thumbnail.url}
-            title={newsPost.title && newsPost.title}
-            slug={newsPost.slug}
-          />
+      {/* <Consolelog data={newsPost} /> */}
+      {newsPost && (
+        <AsideWithTopNews moreNews={moreNews} position="left">
+          <article className="flex-shrink w-full max-w-full overflow-hidden lg:w-2/3">
+            <NewsHeader
+              title={newsPost.title}
+              author={newsPost.author.name}
+              date={newsPost.sys.publishedAt}
+            />
+            <CoverImage
+              url={newsPost.thumbnail.url}
+              title={newsPost.title && newsPost.title}
+              slug={newsPost.slug}
+            />
 
-          <NewsBody content={newsPost.body} />
-        </article>
-      </AsideWithTopNews>
+            <NewsBody content={newsPost.body} />
+          </article>
+        </AsideWithTopNews>
+      )}
     </div>
   )
 }

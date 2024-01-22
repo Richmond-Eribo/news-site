@@ -36,8 +36,21 @@ categories
 excerpt
 body {
   json
+ 
 }
 `
+
+const POST_GRAPHQL_BODY_ASSETS = `
+  links {
+    assets {
+     block {
+      sys {
+        id
+      }
+      url
+    }
+    }
+}`
 
 // a function that takes in an arguement and returns a string or a nullish value
 function stringOrNull(arg?: string) {
@@ -156,4 +169,20 @@ export async function getSearchedPost<T>(
   )
   // return entries
   return extractPostEntries(entries) as T
+}
+
+export async function getAssetFromPostBody<T>(id: any) {
+  // the fetchGraphQL function with an argument.
+  const entries = await fetchGraphQL<T>(
+    `query newsEntryQuery {
+        asset(id:${stringOrNull(id)}) {
+          url
+          title 
+          width
+          height
+        }
+      }`
+  )
+
+  return entries as T
 }

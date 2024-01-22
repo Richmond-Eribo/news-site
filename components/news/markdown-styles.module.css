@@ -10,11 +10,15 @@
 }
 
 .markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
+  @apply mt-12 mb-4 text-3xl leading-snug;
 }
 
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
+  @apply mt-8 mb-4 text-2xl leading-snug;
+}
+
+.markdown figure {
+  @apply relative max-w-[900px] mb-6 min-h-max;
 }
 
 /* Add styles for the table */
@@ -29,10 +33,10 @@
 
 /* Add styles for table header cells (th) */
 .markdown table th {
-  @apply bg-gray-100 border border-white p-1 text-left; /* Example: Gray background, border, and padding */
+  @apply p-1 text-left bg-gray-100 border border-white; /* Example: Gray background, border, and padding */
 }
 
 /* Add styles for table data cells (td) */
 .markdown table td {
-  @apply border p-1; /* Example: Border and padding for data cells */
+  @apply p-1 border; /* Example: Border and padding for data cells */
 }
