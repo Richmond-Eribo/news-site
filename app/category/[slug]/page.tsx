@@ -5,18 +5,21 @@ import Pagination from "@components/pagination"
 import {getPostWithFilter} from "@lib/graphQLapi"
 import {NewsPreviewField} from "types"
 
-const CategoryPage = ({params: {slug}}: {params: {slug: string}}) => {
-  const category: Promise<NewsPreviewField[]> = getPostWithFilter({
+const CategoryPage = async ({params: {slug}}: {params: {slug: string}}) => {
+  const category: NewsPreviewField[] = await getPostWithFilter({
     skip: 0,
     limit: 10,
     category: slug,
   })
+
+  const moreNews = await getPostWithFilter<NewsPreviewField[]>({
+    skip: 5,
+    limit: 15,
+  })
   return (
-    <div className="bg-gray-50 pb-10">
-      {/* @ts-expect-error */}
-      <AsideWithTopNews position="right">
-        {/* @ts-expect-error Server Component */}
-        <LargePostGrid withImage promise={category} />
+    <div className="pb-10 bg-gray-50">
+      <AsideWithTopNews moreNews={moreNews} position="right">
+        <LargePostGrid withImage news={category} />
       </AsideWithTopNews>
       <Pagination />
     </div>
