@@ -27,24 +27,23 @@ const News = async ({params: {slug}}: {params: {slug: string | undefined}}) => {
   return (
     <div>
       {/* <Consolelog data={newsPost} /> */}
-      {newsPost && (
-        <AsideWithTopNews moreNews={moreNews} position="left">
-          <article className="flex-shrink w-full max-w-full overflow-hidden lg:w-2/3">
-            <NewsHeader
-              title={newsPost.title}
-              author={newsPost.author.name}
-              date={newsPost.sys.publishedAt}
-            />
-            <CoverImage
-              url={newsPost.thumbnail.url}
-              title={newsPost.title && newsPost.title}
-              slug={newsPost.slug}
-            />
 
-            <NewsBody content={newsPost.body} />
-          </article>
-        </AsideWithTopNews>
-      )}
+      <AsideWithTopNews moreNews={moreNews} position="left">
+        <article className="flex-shrink w-full max-w-full overflow-hidden lg:w-2/3">
+          <NewsHeader
+            title={newsPost.title}
+            author={newsPost.author.name}
+            date={newsPost.sys.publishedAt}
+          />
+          <CoverImage
+            url={newsPost.thumbnail.url}
+            title={newsPost.title && newsPost.title}
+            slug={newsPost.slug}
+          />
+
+          <NewsBody content={newsPost.body} />
+        </article>
+      </AsideWithTopNews>
     </div>
   )
 }
@@ -54,8 +53,9 @@ export default News
 // generate the slugs
 export async function generateStaticParams() {
   const allSlugs = await getAllSlugs<{slug: string}[]>({})
+  // console.log(allSlugs)
 
-  return allSlugs.map(allSlug => ({slug: allSlug.slug}))
+  return allSlugs.map(Slug => ({slug: Slug.slug}))
 }
 
 // generate metadata from slug

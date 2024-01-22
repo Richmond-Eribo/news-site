@@ -2,8 +2,9 @@ import {NavLinks} from "@schema/data"
 import Link from "next/link"
 import MobileMenu from "./mobile-menu"
 import Search from "./search"
+import {Suspense} from "react"
 
-const moreNavLinks = ["videos", "opinions", "investigation"]
+// const moreNavLinks = ["videos", "opinions", "investigation"]
 
 const Navigation = () => {
   return (
@@ -46,7 +47,9 @@ const Navigation = () => {
             {/* <!-- search form & mobile nav --> */}
             <div className="flex flex-row items-center text-gray-300">
               {/* search button it is client */}
-              <Search />
+              <Suspense fallback={<></>}>
+                <Search />
+              </Suspense>
 
               {/* Mobile Navigation */}
               <MobileMenu />
